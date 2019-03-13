@@ -3,9 +3,9 @@ package com.xcy.WxAuth;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
@@ -27,8 +27,10 @@ public class AuthUtil {
 
     public static JSONObject doGetJson(String url) throws IOException {
         JSONObject jsonObject = null;
-        //首先初始化HttpClient对象
-        DefaultHttpClient client = new DefaultHttpClient();
+        // 首先初始化HttpClient对象
+        // 已过时
+        //DefaultHttpClient client = new DefaultHttpClient();
+        HttpClient client = HttpClientBuilder.create().build();
         //通过get方式进行提交
         HttpGet httpGet = new HttpGet(url);
         //通过HTTPClient的execute方法进行发送请求

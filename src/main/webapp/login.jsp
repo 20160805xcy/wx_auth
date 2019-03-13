@@ -16,10 +16,11 @@
 </head>
 <body>
 <form action="/WxAuth/wxCallBack" method="post">
-    <input type="text" name="account"/>
-    <input type="password" name="password"/>
-    <input type="hidden" name="openid" value="${openid}"/>
-    <input type="text" value="${openid}"/>
+    账号:<input type="text" name="account"/><br/>
+    密码:<input type="password" name="password"/><br/>
+    openId: <input type="hidden" name="openid" value="${openid}"  readonly="readonly"/>
+    <input type="text" value="${openid}"/><br/>
+    昵称:<input type="text" name="nickname" value="${nickname}" readonly="readonly"/><br/>
     <input type="submit" value="提交并绑定"/>
 </form>
 </body>
