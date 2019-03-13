@@ -1,4 +1,4 @@
-package com.xcy.WxAuth;
+package com.xcy.WxAuth.util;
 
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;

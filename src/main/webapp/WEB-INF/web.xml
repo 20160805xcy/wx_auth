@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>wxCallBack</servlet-name>
-        <servlet-class>com.xcy.WxAuth.CallBackServlet</servlet-class>
+        <servlet-class>com.xcy.WxAuth.controller.CallBackServlet</servlet-class>
         <init-param>
             <param-name>dbUrl</param-name>
             <param-value>jdbc:mysql://127.0.0.1:3306/wx_auth</param-value>

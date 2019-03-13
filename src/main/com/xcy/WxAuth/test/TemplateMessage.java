@@ -1,7 +1,8 @@
-package com.xcy.WxAuth;
+package com.xcy.WxAuth.test;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.xcy.WxAuth.util.HttpUtils;
 
 /**
  * @author xcy

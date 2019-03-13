@@ -1,4 +1,4 @@
-package com.xcy.WxAuth;
+package com.xcy.WxAuth.util;
 
 import org.apache.commons.httpclient.*;
 import org.apache.commons.httpclient.methods.GetMethod;

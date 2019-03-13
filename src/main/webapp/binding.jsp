@@ -18,8 +18,8 @@
 <form action="/WxAuth/wxCallBack" method="post">
     账号:<input type="text" name="account"/><br/>
     密码:<input type="password" name="password"/><br/>
-    openId: <input type="hidden" name="openid" value="${openid}"  readonly="readonly"/>
-    <input type="text" value="${openid}"/><br/>
+    openId: <input type="hidden" name="openid" value="${openid}"/>
+    <input type="text" value="${openid}" readonly="readonly"/><br/>
     昵称:<input type="text" name="nickname" value="${nickname}" readonly="readonly"/><br/>
     <input type="submit" value="提交并绑定"/>
 </form>

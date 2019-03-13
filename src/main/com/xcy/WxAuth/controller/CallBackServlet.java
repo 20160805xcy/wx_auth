@@ -1,11 +1,11 @@
-package com.xcy.WxAuth;
+package com.xcy.WxAuth.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.xcy.WxAuth.util.AuthUtil;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -98,7 +98,7 @@ public class CallBackServlet extends HttpServlet {
 
         //第1种情况： 使用从token种获取到的微信用户信息直接展示到页面,无需注册和绑定,直接跳转
         //request.setAttribute("info", userInfo);
-        //request.getRequestDispatcher("/index1.jsp").forward(request, response);
+        //request.getRequestDispatcher("/success1.jsp").forward(request, response);
 
 
         //第2种情况： 将微信与当前系统的账号进行绑定(需将第1种情况和@WebServlet("/callBack")注释掉)
@@ -110,13 +110,13 @@ public class CallBackServlet extends HttpServlet {
                 //已绑定
                 request.setAttribute("nickname", nickname);
                 System.out.println("马上传递到前端页面的nickname: " + nickname);
-                request.getRequestDispatcher("/index2.jsp").forward(request, response);
+                request.getRequestDispatcher("/success2.jsp").forward(request, response);
             } else {
                 //未绑定
                 request.setAttribute("nickname", wxNickName);
                 request.setAttribute("openid", openid);
                 System.out.println("马上传递到前端页面的openid: " + openid);
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
+                request.getRequestDispatcher("/binding.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -145,7 +145,7 @@ public class CallBackServlet extends HttpServlet {
             if (temp > 0) {
                 String nickname = getNickName(openid);
                 request.setAttribute("nickname", nickname);
-                request.getRequestDispatcher("/index2.jsp").forward(request, response);
+                request.getRequestDispatcher("/success2.jsp").forward(request, response);
                 System.out.println("账号绑定成功");
             } else {
                 System.out.println("账号绑定失败");

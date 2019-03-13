@@ -1,4 +1,6 @@
-package com.xcy.WxAuth;
+package com.xcy.WxAuth.controller;
+
+import com.xcy.WxAuth.util.AuthUtil;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
